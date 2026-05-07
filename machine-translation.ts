@@ -48,7 +48,7 @@ export function detectMachineTranslation() {
     (map.has(element)
       ? map.get(element)
       : map.set(element, []).get(element)
-    )?.push(attribute);
+    ).push(attribute);
   }
 
   let timer: number | undefined;
