@@ -42,7 +42,7 @@ export function detectMachineTranslation() {
     },
   ];
 
-  const map = new Map<Element, string[]>();
+  const map = new Map();
 
   for (const { attribute, element } of strategies) {
     (map.has(element)
