@@ -14,7 +14,7 @@
 
 let isInitialized = false;
 
-export function detectMachineTranslation() {
+export function detectMachineTranslation(): () => void {
   if (isInitialized) {
     console.warn('Already initialized');
     return () => {};
@@ -60,7 +60,7 @@ export function detectMachineTranslation() {
 
   let timer: number | undefined;
 
-  function callback() {
+  function callback(): void {
     if (timer !== undefined) {
       return;
     }
