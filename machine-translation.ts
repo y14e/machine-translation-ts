@@ -1,7 +1,7 @@
 /**
  * machine-translation.ts
  *
- * @version 1.0.4
+ * @version 1.0.5
  * @author Yusuke Kamiyamane
  * @license MIT
  * @copyright Copyright (c) Yusuke Kamiyamane
@@ -70,7 +70,7 @@ export function detectMachineTranslation(): () => void {
         return;
       }
 
-      window.dispatchEvent(new Event('machineTranslationDetected'));
+      window.dispatchEvent(new CustomEvent('machineTranslationDetected'));
       observer?.disconnect();
       observer = null;
     });
