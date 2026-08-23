@@ -1,7 +1,7 @@
 /**
  * machine-translation.ts
  *
- * @version 1.0.6
+ * @version 1.0.7
  * @author Yusuke Kamiyamane
  * @license MIT
  * @copyright Copyright (c) Yusuke Kamiyamane
@@ -33,9 +33,7 @@ export function detectMachineTranslation(): () => void {
       attribute: 'class',
       element: html,
       test: () =>
-        [...html.classList].some((className: string) =>
-          /translated-(ltr|rtl)/.test(className),
-        ),
+        [...html.classList].some((c: string) => /translated-(ltr|rtl)/.test(c)),
     },
     {
       attribute: '_msttexthash',
@@ -66,7 +64,7 @@ export function detectMachineTranslation(): () => void {
     }
 
     timer = requestAnimationFrame(() => {
-      if (!strategies.some((strategy) => strategy.test())) {
+      if (!strategies.some((s) => s.test())) {
         return;
       }
 
