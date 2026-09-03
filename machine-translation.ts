@@ -1,7 +1,7 @@
 /**
  * machine-translation.ts
  *
- * @version 1.0.6
+ * @version 1.0.7
  * @author Yusuke Kamiyamane
  * @license MIT
  * @copyright Copyright (c) Yusuke Kamiyamane
@@ -49,13 +49,13 @@ export function detectMachineTranslation(): () => void {
     },
   ];
 
-  const map = new Map();
+  const map = new Map<Element, string[]>();
 
   for (const { attribute, element } of strategies) {
     (map.has(element)
       ? map.get(element)
       : map.set(element, []).get(element)
-    ).push(attribute);
+    )?.push(attribute);
   }
 
   let timer: number | undefined;
