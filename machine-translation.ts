@@ -1,7 +1,7 @@
 /**
  * machine-translation.ts
  *
- * @version 1.0.7
+ * @version 1.0.8
  * @author Yusuke Kamiyamane
  * @license MIT
  * @copyright Copyright (c) Yusuke Kamiyamane
@@ -92,5 +92,7 @@ export function detectMachineTranslation(): () => void {
       cancelAnimationFrame(timer);
       timer = undefined;
     }
+
+    isInitialized = false;
   };
 }
