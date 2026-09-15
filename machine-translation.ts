@@ -50,7 +50,9 @@ export function detectMachineTranslation(): () => void {
   const map = new Map<Element, Set<string>>();
 
   for (const { attribute, element } of strategies) {
-    (map.get(element) ?? map.set(element, new Set()).get(element))?.add(attribute);
+    (map.get(element) ?? map.set(element, new Set()).get(element))?.add(
+      attribute,
+    );
   }
 
   let timer: number | undefined;
