@@ -1,7 +1,7 @@
 /**
  * machine-translation.ts
  *
- * @version 1.0.11
+ * @version 1.0.12
  * @author Yusuke Kamiyamane
  * @license MIT
  * @copyright Copyright (c) Yusuke Kamiyamane
@@ -90,6 +90,7 @@ export function detectMachineTranslation(): () => void {
       timer = undefined;
     }
 
+    map.clear();
     isInitialized = false;
   };
 }
