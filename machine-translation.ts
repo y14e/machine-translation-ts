@@ -1,17 +1,3 @@
-/**
- * machine-translation.ts
- *
- * @version 1.0.12
- * @author Yusuke Kamiyamane
- * @license MIT
- * @copyright Copyright (c) Yusuke Kamiyamane
- * @see {@link https://github.com/y14e/machine-translation-ts}
- */
-
-// -----------------------------------------------------------------------------
-// APIs
-// -----------------------------------------------------------------------------
-
 let isInitialized = false;
 
 export function detectMachineTranslation(): () => void {
