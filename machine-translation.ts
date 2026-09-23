@@ -19,7 +19,7 @@ export function detectMachineTranslation(): () => void {
       attribute: 'class',
       element: html,
       test: () =>
-        [...html.classList].some((c: string) => /translated-(ltr|rtl)/.test(c)),
+        [...html.classList].some((c) => /translated-(ltr|rtl)/.test(c)),
     },
     {
       attribute: '_msttexthash',
