@@ -30,7 +30,7 @@ export function detectMachineTranslation(): () => void {
       element: html,
       test: () => new Intl.Locale(html.lang).language !== language,
     },
-  ];
+  ] as const;
 
   const map = new Map<Element, Set<string>>();
 
