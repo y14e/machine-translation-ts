@@ -6,7 +6,7 @@ export function detectMachineTranslation(): () => void {
     return () => {};
   }
 
-  const html = document.documentElement;
+  const root = document.documentElement;
   const title = document.querySelector('title');
 
   if (!title) {
@@ -17,8 +17,8 @@ export function detectMachineTranslation(): () => void {
   const strategies = [
     {
       attribute: 'class',
-      element: html,
-      test: () => [...html.classList].some((c) => /translated-(ltr|rtl)/.test(c)),
+      element: root,
+      test: () => [...root.classList].some((c) => /translated-(ltr|rtl)/.test(c)),
     },
     {
       attribute: '_msttexthash',
@@ -27,8 +27,8 @@ export function detectMachineTranslation(): () => void {
     },
     {
       attribute: 'lang',
-      element: html,
-      test: () => new Intl.Locale(html.lang).language !== language,
+      element: root,
+      test: () => new Intl.Locale(root.lang).language !== language,
     },
   ] as const;
 
