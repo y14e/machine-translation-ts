@@ -38,7 +38,7 @@ export function detectMachineTranslation(): () => void {
     (map.get(element) ?? map.set(element, new Set()).get(element))?.add(attribute);
   }
 
-  let timer: number | undefined;
+  let timer: ReturnType<typeof requestAnimationFrame> | undefined;
 
   function onMutate(): void {
     if (timer !== undefined) {
