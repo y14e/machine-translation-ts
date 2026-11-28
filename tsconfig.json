@@ -1,0 +1,30 @@
+// https://www.typescriptlang.org/tsconfig/
+{
+  "compilerOptions": {
+    // type-checking
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "strict": true,
+
+    // modules
+    "allowImportingTsExtensions": true,
+    "module": "preserve",
+    "moduleResolution": "bundler",
+
+    // emit
+    "declaration": true,
+    "noEmit": true,
+    "sourceMap": true,
+
+    // interop-constraints
+    "verbatimModuleSyntax": true,
+
+    // language-and-environment
+    "target": "ES2022",
+
+    // completeness
+    "skipLibCheck": true
+  }
+}
